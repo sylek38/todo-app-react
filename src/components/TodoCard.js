@@ -1,4 +1,5 @@
 import './../styles/App.sass';
+import iconCross from "../assets/icons/icon-cross.svg";
 
 const TodoCard = () => {
     return ( 
@@ -7,7 +8,20 @@ const TodoCard = () => {
 
             {/* TODO-LIST */}
             <ul className="todo-card__list">
-                <li className="todo-card__item">Item 1</li>
+                <li className="todo-card__item">
+                    <div className="todo-card__item-check"></div>
+                    <span className="todo-card__item-text">Item</span>
+                    <button className="todo-card__item-delete">
+                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
+                    </button>
+                </li>
+                <li className="todo-card__item">
+                    <div className="todo-card__item-check"></div>
+                    <span className="todo-card__item-text">Item</span>
+                    <button className="todo-card__item-delete">
+                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
+                    </button>
+                </li>
             </ul>
 
             {/* TODO-FILTER-BOTTOM */}

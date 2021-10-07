@@ -15,7 +15,7 @@ const AddTodo = () => {
 
     return ( 
         <form 
-            class="add-todo"
+            className="add-todo"
             onSubmit={onSubmit}
             >
             <div className="add-todo__wrapper">

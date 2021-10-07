@@ -1,5 +1,6 @@
 @import "vars"
 @import "typography"
+@import "mixins"
 
 *,
 *::before,
@@ -22,6 +23,7 @@ body
 .container
   min-height: 100vh
   width: 100vw
+  padding: 0 2rem
   background: url("../assets/images/bg-desktop-dark.jpg")
   background-size: 100% auto
   background-repeat: no-repeat
@@ -47,20 +49,17 @@ body
     letter-spacing: 12px
     font-weight: $font-weight-bold
 
-    // themify this:
     color: white
-    
     
 
 .main
  @include content-wrapper
 
-//  outline: 1px solid white
-
  &__container
 
 
 .add-todo
+
   &__wrapper
     display: flex
     gap: 1.25rem
@@ -68,21 +67,8 @@ body
     background-color: $very-dark-desaturated-blue
     border-radius: 8px
 
-  $border: 1px
-  
   &__btn
-    width: 1.5rem
-    height: 1.5rem
-    border-radius: 50%
-    border: 1px solid $very-dark-grayish-blue-border
-    background-color: $very-dark-desaturated-blue
-    transition: .25s
-
-    &:hover
-      border: 1px solid transparent
-      background-image: $check-background
-      background-origin: border-box
-      box-shadow: 1px 500px 1px $very-dark-desaturated-blue inset
+    @include btn-on-hover
       
   &__input
     width: 100%
@@ -90,11 +76,42 @@ body
     background-color: $very-dark-desaturated-blue
     border: none
     outline: none
-    // padding: 5px 0
     font-size: 18px
   
     &::placeholder
-      
       color: $dark-grayish-blue
       
+.todo-card
+  min-height: 350px
+  margin-top: 1.5rem
+  background-color: $very-dark-desaturated-blue
+  border-radius: 8px
+
+  &__list
+    list-style: none
+  
+  &__item
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 1.25rem
+    border-bottom: 1px solid $very-dark-grayish-blue-border
+    padding: 1.25rem
+
+  &__item-check
+    @include btn-on-hover
       
+  &__item-text
+    color: $light-grayish-blue
+
+  &__item-delete
+    width: 1.5rem
+    height: 1.5rem
+    margin-left: auto
+    background-color: $very-dark-desaturated-blue
+    border: none
+
+  &__icon-cross
+    width: 20px
+    height: 20px
+    

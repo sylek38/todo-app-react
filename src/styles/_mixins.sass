@@ -7,3 +7,18 @@
 @mixin desktop
     @media (min-width: 701px)
         @content
+
+
+@mixin btn-on-hover
+    width: 1.5rem
+    height: 1.5rem
+    border-radius: 50%
+    border: 1px solid $very-dark-grayish-blue-border
+    background-color: $very-dark-desaturated-blue
+    transition: .25s
+
+    &:hover
+      border: 1px solid transparent
+      background-image: $check-background
+      background-origin: border-box
+      box-shadow: 1px 500px 1px $very-dark-desaturated-blue inset

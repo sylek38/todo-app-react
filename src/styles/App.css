@@ -20,6 +20,7 @@ body {
 .container {
   min-height: 100vh;
   width: 100vw;
+  padding: 0 2rem;
   background: url("../assets/images/bg-desktop-dark.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -48,7 +49,6 @@ body {
   width: 100%;
   margin: auto;
 }
-
 .add-todo__wrapper {
   display: flex;
   gap: 1.25rem;
@@ -86,4 +86,50 @@ body {
 }
 .add-todo__input::placeholder {
   color: #777a92;
+}
+
+.todo-card {
+  min-height: 350px;
+  margin-top: 1.5rem;
+  background-color: #25273c;
+  border-radius: 8px;
+}
+.todo-card__list {
+  list-style: none;
+}
+.todo-card__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: 1px solid #393a4c;
+  padding: 1.25rem;
+}
+.todo-card__item-check {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid #393a4c;
+  background-color: #25273c;
+  transition: 0.25s;
+}
+.todo-card__item-check:hover {
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  background-origin: border-box;
+  box-shadow: 1px 500px 1px #25273c inset;
+}
+.todo-card__item-text {
+  color: #cacde8;
+}
+.todo-card__item-delete {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: auto;
+  background-color: #25273c;
+  border: none;
+}
+.todo-card__icon-cross {
+  width: 20px;
+  height: 20px;
 }/*# sourceMappingURL=App.css.map */
