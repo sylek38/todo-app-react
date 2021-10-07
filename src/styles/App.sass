@@ -1,0 +1,100 @@
+@import "vars"
+@import "typography"
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+*
+  font-family: $font-primary
+
+body
+  font:
+    size: $font-size
+    weight: $font-weight-normal
+    
+  line-height: 1.6
+  
+
+.container
+  min-height: 100vh
+  width: 100vw
+  background: url("../assets/images/bg-desktop-dark.jpg")
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-color: $very-dark-blue
+
+@mixin content-wrapper
+  max-width: 600px
+  width: 100%
+  margin: auto
+  
+
+.header
+  @include content-wrapper
+
+  padding: 3.2rem 0 2.2rem 0
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  
+  &__title
+    letter-spacing: 12px
+    font-weight: $font-weight-bold
+
+    // themify this:
+    color: white
+    
+    
+
+.main
+ @include content-wrapper
+
+//  outline: 1px solid white
+
+ &__container
+
+
+.add-todo
+  &__wrapper
+    display: flex
+    gap: 1.25rem
+    padding: 1.25rem
+    background-color: $very-dark-desaturated-blue
+    border-radius: 8px
+
+  $border: 1px
+  
+  &__btn
+    width: 1.5rem
+    height: 1.5rem
+    border-radius: 50%
+    border: 1px solid $very-dark-grayish-blue-border
+    background-color: $very-dark-desaturated-blue
+    transition: .25s
+
+    &:hover
+      border: 1px solid transparent
+      background-image: $check-background
+      background-origin: border-box
+      box-shadow: 1px 500px 1px $very-dark-desaturated-blue inset
+      
+  &__input
+    width: 100%
+    color: $light-grayish-blue
+    background-color: $very-dark-desaturated-blue
+    border: none
+    outline: none
+    // padding: 5px 0
+    font-size: 18px
+  
+    &::placeholder
+      
+      color: $dark-grayish-blue
+      
+      
