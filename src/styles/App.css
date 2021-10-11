@@ -27,6 +27,7 @@ body {
   background-color: #161722;
 }
 
+/* HEADER */
 .header {
   max-width: 600px;
   width: 100%;
@@ -44,11 +45,13 @@ body {
   color: white;
 }
 
+/* MAIN */
 .main {
   max-width: 600px;
   width: 100%;
   margin: auto;
 }
+/* ADD-TODO */
 .add-todo__wrapper {
   display: flex;
   gap: 1.25rem;
@@ -90,6 +93,9 @@ body {
 
 .todo-card {
   min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 1.5rem;
   background-color: #25273c;
   border-radius: 8px;
@@ -132,4 +138,51 @@ body {
 .todo-card__icon-cross {
   width: 20px;
   height: 20px;
+}
+.todo-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+}
+.todo-card__items-left {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d5066;
+}
+.todo-card__clear-items {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d5066;
+  background-color: #25273c;
+  border: none;
+  transition: 0.25s;
+}
+.todo-card__clear-items:hover {
+  color: #e4e5f1;
+}
+
+.todo-filters__btn {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4d5066;
+  background-color: inherit;
+  border: none;
+  transition: 0.25s;
+}
+.todo-filters__btn:hover {
+  color: #e4e5f1;
+}
+.todo-filters__btn:active {
+  color: #3a7bfd;
+}
+
+.todo-filters * + * {
+  margin-left: 1rem;
+}
+
+@media (min-width: 700px) {
+  .filter-mobile {
+    display: none;
+  }
 }/*# sourceMappingURL=App.css.map */

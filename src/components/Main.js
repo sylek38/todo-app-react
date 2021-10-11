@@ -1,5 +1,6 @@
 import './../styles/App.sass';
 import AddTodo from "./AddTodo";
+import Filters from './Filters';
 import TodoCard from "./TodoCard";
 
 const Main = () => {
@@ -8,6 +9,10 @@ const Main = () => {
             <div className="main__container">
                 <AddTodo />
                 <TodoCard />
+                <div className="filter-mobile">
+                    <Filters />
+                </div>
+                
             </div>
         </main>
      );

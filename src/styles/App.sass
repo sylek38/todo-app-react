@@ -33,7 +33,8 @@ body
   max-width: 600px
   width: 100%
   margin: auto
-  
+
+/* HEADER */
 
 .header
   @include content-wrapper
@@ -50,13 +51,17 @@ body
     font-weight: $font-weight-bold
 
     color: white
-    
+
+/* MAIN */
 
 .main
  @include content-wrapper
+ 
 
  &__container
+   
 
+/* ADD-TODO */
 
 .add-todo
 
@@ -80,9 +85,14 @@ body
   
     &::placeholder
       color: $dark-grayish-blue
-      
+
+// TODO-CARD
+
 .todo-card
   min-height: 350px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   margin-top: 1.5rem
   background-color: $very-dark-desaturated-blue
   border-radius: 8px
@@ -114,4 +124,50 @@ body
   &__icon-cross
     width: 20px
     height: 20px
+
+  &__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1.25rem
+
+  &__items-left
+    font-size: 16px
+    font-weight: 400
+    color: $very-dark-grayish-blue
+
+  &__clear-items
+    font-size: 16px
+    font-weight: 400
+    color: $very-dark-grayish-blue
+    background-color: $very-dark-desaturated-blue
+    border: none
+    transition: .25s
     
+    &:hover
+      color: $light-grayish-blue-hover
+
+
+.todo-filters
+
+  &__btn
+    font-size: 16px
+    font-weight: 700
+    color: $very-dark-grayish-blue
+    background-color: inherit
+    border: none
+    transition: .25s
+    
+    &:hover
+      color: $light-grayish-blue-hover
+
+    &:active
+      color: $bright-blue
+  
+.todo-filters * + *
+  margin-left: 1rem
+    
+
+.filter-mobile
+  @include mobile
+    display: none
