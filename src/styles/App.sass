@@ -74,6 +74,8 @@ body
 
   &__btn
     @include btn-on-hover
+    &:hover
+      @include on-hover-effect
       
   &__input
     width: 100%
@@ -107,10 +109,17 @@ body
     gap: 1.25rem
     border-bottom: 1px solid $very-dark-grayish-blue-border
     padding: 1.25rem
+    cursor: pointer
+
+    &:hover .todo-card__item-delete,
+      opacity: 1
+      
+    &:hover .todo-card__item-check
+      @include on-hover-effect
 
   &__item-check
     @include btn-on-hover
-      
+  
   &__item-text
     color: $light-grayish-blue
 
@@ -118,8 +127,11 @@ body
     width: 1.5rem
     height: 1.5rem
     margin-left: auto
-    background-color: $very-dark-desaturated-blue
+    background-color: inherit
     border: none
+    opacity: 0
+    transition: .25s
+    cursor: pointer
 
   &__icon-cross
     width: 20px

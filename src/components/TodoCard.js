@@ -1,44 +1,27 @@
 import './../styles/App.sass';
-import iconCross from "../assets/icons/icon-cross.svg";
-import Filters from './Filters';
 
-const TodoCard = () => {
-    return ( 
+import Filters from './Filters';
+import Todo from './Todo';
+
+const TodoCard = ({ todos, deleteItem }) => {
+
+    console.log(todos)
+
+    return (
+
         // CARD
         <div className="todo-card">
 
-            {/* TODO-LIST */}
-            <ul className="todo-card__list">
-                <li className="todo-card__item">
-                    <div className="todo-card__item-check"></div>
-                    <span className="todo-card__item-text">Item</span>
-                    <button className="todo-card__item-delete">
-                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
-                    </button>
-                </li>
+            { todos.length === 0 && <div>Your todos go here</div> }
 
-                <li className="todo-card__item">
-                    <div className="todo-card__item-check"></div>
-                    <span className="todo-card__item-text">Item</span>
-                    <button className="todo-card__item-delete">
-                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
-                    </button>
-                </li>
-                <li className="todo-card__item">
-                    <div className="todo-card__item-check"></div>
-                    <span className="todo-card__item-text">Item</span>
-                    <button className="todo-card__item-delete">
-                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
-                    </button>
-                </li>
-                <li className="todo-card__item">
-                    <div className="todo-card__item-check"></div>
-                    <span className="todo-card__item-text">Item</span>
-                    <button className="todo-card__item-delete">
-                        <img className="todo-card__icon-cross" src={iconCross} alt="delete item" />
-                    </button>
-                </li>
+            {/* TODO-LIST */}
+            { todos && 
+            <ul className="todo-card__list">
+                {todos.map(todo => (
+                    <Todo text={todo.name} key={todo.id} id={todo.id} deleteItem={deleteItem} />
+                ))}
             </ul>
+            }
 
             {/* TODO-FILTER-BOTTOM */}
             <div className="todo-card__bottom">

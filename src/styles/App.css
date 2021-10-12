@@ -67,12 +67,6 @@ body {
   background-color: #25273c;
   transition: 0.25s;
 }
-.add-todo__btn:hover {
-  border: 1px solid transparent;
-  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
-  background-origin: border-box;
-  box-shadow: 1px 500px 1px #25273c inset;
-}
 .add-todo__input {
   width: 100%;
   color: #cacde8;
@@ -110,6 +104,14 @@ body {
   gap: 1.25rem;
   border-bottom: 1px solid #393a4c;
   padding: 1.25rem;
+  cursor: pointer;
+}
+.todo-card__item:hover .todo-card__item-delete, .todo-card__item:hover .todo-card__item-check {
+  opacity: 1;
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  background-origin: border-box;
+  box-shadow: 1px 500px 1px #25273c inset;
 }
 .todo-card__item-check {
   width: 1.5rem;
@@ -132,8 +134,11 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   margin-left: auto;
-  background-color: #25273c;
+  background-color: inherit;
   border: none;
+  opacity: 0;
+  transition: 0.25s;
+  cursor: pointer;
 }
 .todo-card__icon-cross {
   width: 20px;

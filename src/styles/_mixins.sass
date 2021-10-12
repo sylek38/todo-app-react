@@ -1,5 +1,6 @@
-// TODO: change it later
-    
+// MEDIA QUERIES
+    // TODO: change it later
+
 @mixin mobile
     @media (min-width: 700px)
         @content
@@ -8,6 +9,7 @@
     @media (min-width: 701px)
         @content
 
+// STYLES
 
 @mixin btn-on-hover
     width: 1.5rem
@@ -17,8 +19,8 @@
     background-color: $very-dark-desaturated-blue
     transition: .25s
 
-    &:hover
-      border: 1px solid transparent
-      background-image: $check-background
-      background-origin: border-box
-      box-shadow: 1px 500px 1px $very-dark-desaturated-blue inset
+@mixin on-hover-effect
+    border: 1px solid transparent
+    background-image: $check-background
+    background-origin: border-box
+    box-shadow: 1px 500px 1px $very-dark-desaturated-blue inset
