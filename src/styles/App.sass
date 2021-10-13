@@ -111,17 +111,44 @@ body
     padding: 1.25rem
     cursor: pointer
 
-    &:hover .todo-card__item-delete,
+    &:hover .todo-card__item-delete
       opacity: 1
       
     &:hover .todo-card__item-check
       @include on-hover-effect
 
+    &:hover .todo-card__item-check--checked
+      @include btn-checked
+
   &__item-check
     @include btn-on-hover
+
+  &__item-check--checked
+    @include btn-checked
+    position: relative
+
+    &::before
+      content: ""
+      width: 10px
+      height: 10px
+      background-image: url("../assets/icons/icon-check.svg")
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+  //   > .todo-card__icon-check
+  //     opacity: 1
+
+  // &__icon-check
+  //   opacity: 0
+
   
   &__item-text
     color: $light-grayish-blue
+
+  &__item-text--completed
+    text-decoration-line: line-through
+    color: $very-dark-grayish-blue
 
   &__item-delete
     width: 1.5rem

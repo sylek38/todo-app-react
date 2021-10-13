@@ -7,6 +7,7 @@ import TodoCard from "./TodoCard";
 const Main = () => {
     const [inputText, setInputText] = useState("");
     const [todos, setTodos] = useState([]);
+    // const [isCompleted, setIsCompleted] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("todos", todos);
@@ -16,17 +17,14 @@ const Main = () => {
         const newTodos = [...todos];
         setTodos(newTodos.filter(todo => todo.id !== id))
     }
-
-    // const addTodo = () => {
-    //     localStorage.setItem("todos", todos);
-    // }
+    
 
 
     return ( 
         <main className="main">
             <div className="main__container">
                 <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos}/>
-                <TodoCard todos={todos} deleteItem={deleteItem}/>
+                <TodoCard todos={todos} deleteItem={deleteItem} todos={todos}/>
                 <div className="filter-mobile">
                     <Filters />
                 </div>

@@ -67,6 +67,12 @@ body {
   background-color: #25273c;
   transition: 0.25s;
 }
+.add-todo__btn:hover {
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  background-origin: border-box;
+  box-shadow: 1px 500px 1px #25273c inset;
+}
 .add-todo__input {
   width: 100%;
   color: #cacde8;
@@ -106,12 +112,19 @@ body {
   padding: 1.25rem;
   cursor: pointer;
 }
-.todo-card__item:hover .todo-card__item-delete, .todo-card__item:hover .todo-card__item-check {
+.todo-card__item:hover .todo-card__item-delete {
   opacity: 1;
+}
+.todo-card__item:hover .todo-card__item-check {
   border: 1px solid transparent;
   background-image: linear-gradient(to bottom, #57ddff, #c058f3);
   background-origin: border-box;
   box-shadow: 1px 500px 1px #25273c inset;
+}
+.todo-card__item:hover .todo-card__item-check--checked {
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  box-shadow: none;
+  border: none;
 }
 .todo-card__item-check {
   width: 1.5rem;
@@ -121,14 +134,29 @@ body {
   background-color: #25273c;
   transition: 0.25s;
 }
-.todo-card__item-check:hover {
-  border: 1px solid transparent;
+.todo-card__item-check--checked {
   background-image: linear-gradient(to bottom, #57ddff, #c058f3);
-  background-origin: border-box;
-  box-shadow: 1px 500px 1px #25273c inset;
+  box-shadow: none;
+  border: none;
+  position: relative;
+}
+.todo-card__item-check--checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-image: url("../assets/icons/icon-check.svg");
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .todo-card__item-text {
   color: #cacde8;
+}
+.todo-card__item-text--completed {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  color: #4d5066;
 }
 .todo-card__item-delete {
   width: 1.5rem;
