@@ -20,7 +20,7 @@ const Filters = () => {
                         value="completed" 
                         aria-label="Completed">
                             Completed
-                        </button>
+                    </button>
                 </div>
      );
 }

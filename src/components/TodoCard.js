@@ -3,7 +3,7 @@ import './../styles/App.sass';
 import Filters from './Filters';
 import Todo from './Todo';
 
-const TodoCard = ({ todos, deleteItem, isCompleted, setIsCompleted }) => {
+const TodoCard = ({ todos, setTodos}) => {
 
     console.log(todos)
 
@@ -13,14 +13,22 @@ const TodoCard = ({ todos, deleteItem, isCompleted, setIsCompleted }) => {
         <div className="todo-card">
 
             { todos.length === 0 && 
-            <div>Your todos go here</div>
+            <span className="todo-card__empty-list">Your todos go here</span>
             }
 
             {/* TODO-LIST */}
             { todos && 
             <ul className="todo-card__list">
                 {todos.map(todo => (
-                    <Todo text={todo.name} key={todo.id} id={todo.id} deleteItem={deleteItem} isCompleted={isCompleted} setIsCompleted={setIsCompleted} />
+                    <Todo 
+                        key={todo.id} 
+                        todo={todo}
+                        text={todo.name} 
+                        todos={todos}
+                        setTodos={setTodos}
+
+                    />
+                    
                 ))}
             </ul>
             }
