@@ -3,9 +3,7 @@ import './../styles/App.sass';
 import Filters from './Filters';
 import Todo from './Todo';
 
-const TodoCard = ({ todos, setTodos}) => {
-
-    console.log(todos)
+const TodoCard = ({ todos, setTodos, setStatus }) => {
 
     return (
 
@@ -26,14 +24,13 @@ const TodoCard = ({ todos, setTodos}) => {
                         text={todo.name} 
                         todos={todos}
                         setTodos={setTodos}
-
                     />
                     
                 ))}
             </ul>
             }
 
-            {/* TODO-FILTER-BOTTOM */}
+            {/* TODO-FILTERS-BOTTOM */}
             <div className="todo-card__bottom">
 
                 {/* LEFT */}
@@ -42,7 +39,7 @@ const TodoCard = ({ todos, setTodos}) => {
                 </span>
 
                 {/* CENTER */}
-                <Filters />
+                <Filters setStatus={setStatus}/>
 
                 {/* RIGHT */}
                 <button className="todo-card__clear-items">Clear Completed</button>

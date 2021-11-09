@@ -220,7 +220,7 @@ body {
   color: #e4e5f1;
   cursor: pointer;
 }
-.todo-filters__btn:active {
+.todo-filters__btn--selected {
   color: #3a7bfd;
 }
 
