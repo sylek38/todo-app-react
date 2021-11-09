@@ -7,10 +7,8 @@ import TodoCard from "./TodoCard";
 const Main = () => {
     const [inputText, setInputText] = useState("");
     const [todos, setTodos] = useState([]);
-    const [status, setStatus] = useState("all");
+    const [filterStatus, setFilterStatus] = useState("all");
     
-    
-    // const [isCompleted, setIsCompleted] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("todos", todos);
@@ -29,11 +27,13 @@ const Main = () => {
                 <TodoCard 
                     todos={todos} 
                     setTodos={setTodos}
-                    setStatus={setStatus}
+                    filterStatus={filterStatus}
+                    setFilterStatus={setFilterStatus}
                 />
                 <div className="filter-mobile">
-                    <Filters 
-                        setStatus={setStatus}
+                    <Filters
+                        filterStatus={filterStatus}
+                        setFilterStatus={setFilterStatus}
                     />
                 </div>
                 

@@ -3,7 +3,7 @@ import './../styles/App.sass';
 import Filters from './Filters';
 import Todo from './Todo';
 
-const TodoCard = ({ todos, setTodos, setStatus }) => {
+const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus }) => {
 
     return (
 
@@ -39,7 +39,11 @@ const TodoCard = ({ todos, setTodos, setStatus }) => {
                 </span>
 
                 {/* CENTER */}
-                <Filters setStatus={setStatus}/>
+                <Filters 
+                    filterStatus={filterStatus}
+                    setFilterStatus={setFilterStatus} 
+                    
+                />
 
                 {/* RIGHT */}
                 <button className="todo-card__clear-items">Clear Completed</button>

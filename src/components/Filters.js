@@ -1,20 +1,21 @@
 import { useState } from 'react/cjs/react.development';
 import './../styles/App.sass';
 
-const Filters = ({ setStatus }) => {
+const Filters = ({ filterStatus, setFilterStatus }) => {
+    
+    const statusHandler = (filterValue) => {
+            setFilterStatus(filterValue);
 
-    const statusHandler = (e) => {
-        if (e.target.className === "todo-filters__btn") {
-            setStatus(e.target.value);
-            e.target.className.add("todo-filters__btn--selected");
-        }
-    }
+    };
+
+// ${status === "all" ? "todo-filters__btn--selected" : ""}`}
 
     return ( 
-    <div className="todo-filters" onClick={statusHandler}>
+    <div className="todo-filters">
         <button
-        // todo-filters__btn--selected
-            className="todo-filters__btn"
+            onClick={() => statusHandler("all")}
+            className=
+            {`todo-filters__btn ${filterStatus === "all" ? "todo-filters__btn--selected" : ""}`}
             value="all" 
             aria-label="All"
         >
@@ -22,7 +23,9 @@ const Filters = ({ setStatus }) => {
         </button>
             
         <button
-            className="todo-filters__btn"
+            onClick={() => statusHandler("active")}
+            className=
+            {`todo-filters__btn ${filterStatus === "active" ? "todo-filters__btn--selected" : ""}`}
             value="active"
             aria-label="Active"
         >
@@ -30,7 +33,9 @@ const Filters = ({ setStatus }) => {
         </button>
         
         <button
-            className="todo-filters__btn"
+            onClick={() => statusHandler("completed")}
+            className=
+            {`todo-filters__btn ${filterStatus === "completed" ? "todo-filters__btn--selected" : ""}`}
             value="completed" 
             aria-label="Completed">
                 Completed
