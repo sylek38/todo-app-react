@@ -39,7 +39,7 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodo
 
                 {/* LEFT */}
                 <span className="todo-card__items-left">
-                item(s) left 
+                {todos.filter(item => !item.isCompleted).length} item(s) left 
                 </span>
 
                 {/* CENTER */}
