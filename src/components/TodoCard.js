@@ -3,7 +3,11 @@ import './../styles/App.sass';
 import Filters from './Filters';
 import Todo from './Todo';
 
-const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus }) => {
+const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodos }) => {
+
+    const clearCompleted = () => {
+        setTodos(todos.filter(item => !item.isCompleted));
+    }
 
     return (
 
@@ -17,7 +21,7 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus }) => {
             {/* TODO-LIST */}
             { todos && 
             <ul className="todo-card__list">
-                {todos.map(todo => (
+                {filteredTodos.map(todo => (
                     <Todo 
                         key={todo.id} 
                         todo={todo}
@@ -35,19 +39,21 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus }) => {
 
                 {/* LEFT */}
                 <span className="todo-card__items-left">
-                    item(s) left
+                item(s) left 
                 </span>
 
                 {/* CENTER */}
                 <Filters 
                     filterStatus={filterStatus}
                     setFilterStatus={setFilterStatus} 
-                    
                 />
 
                 {/* RIGHT */}
-                <button className="todo-card__clear-items">Clear Completed</button>
-
+                <button 
+                    onClick={clearCompleted}
+                    className="todo-card__clear-items"
+                >
+                    Clear Completed</button>
             </div>
 
             
