@@ -1,4 +1,3 @@
-import { useState } from 'react/cjs/react.development';
 import './../styles/App.sass';
 
 const Filters = ({ filterStatus, setFilterStatus }) => {
