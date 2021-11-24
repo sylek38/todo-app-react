@@ -28,6 +28,10 @@ body {
   padding: 0 2rem;
   @include apply-background-image;
   @include apply-theme("background-color", "color-background");
+
+  @include desktop {
+    padding: 0 1rem;
+  }
 }
 
 @mixin content-wrapper {
@@ -75,6 +79,8 @@ body {
     @include apply-theme("box-shadow", "box-shadow-card");
   }
   &__btn {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
     @include btn-on-hover;
     &:hover {
       @include on-hover-effect;
@@ -135,6 +141,8 @@ body {
     }
   }
   &__item-check {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
     @include btn-on-hover;
   }
   &__item-check--checked {
@@ -159,6 +167,7 @@ body {
   //   opacity: 0
   }
   &__item-text {
+    word-break: break-word;
     transition: .25s;
     @include apply-theme("color", "color-item-text");
     
@@ -186,6 +195,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem;
+    gap: 1rem;
 
     .todo-filters {
       @include desktop {
@@ -196,6 +206,8 @@ body {
   &__items-left {
     font-size: 16px;
     font-weight: 400;
+    text-align: center;
+    line-height: 1.2;
     @include apply-theme("color", "color-filters");
   }
   &__clear-items {
@@ -204,6 +216,7 @@ body {
     background-color: inherit;
     border: none;
     transition: .25s;
+    line-height: 1.2;
     @include apply-theme("color", "color-filters");
 
     &:hover {

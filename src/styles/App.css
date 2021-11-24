@@ -54,6 +54,11 @@ body {
 .light .container {
   background-color: #fafafa;
 }
+@media (max-width: 699px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
 
 /* HEADER */
 .header {
@@ -105,6 +110,8 @@ body {
   box-shadow: 0 35px 50px rgba(0, 0, 0, 0.1);
 }
 .add-todo__btn {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -223,6 +230,8 @@ body {
   border: 1px solid transparent;
 }
 .todo-card__item-check {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -257,6 +266,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .todo-card__item-text {
+  word-break: break-word;
   transition: 0.25s;
 }
 .dark .todo-card__item-text {
@@ -294,6 +304,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem;
+  gap: 1rem;
 }
 @media (max-width: 699px) {
   .todo-card__bottom .todo-filters {
@@ -303,6 +314,8 @@ body {
 .todo-card__items-left {
   font-size: 16px;
   font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
 }
 .dark .todo-card__items-left {
   color: #4d5066;
@@ -316,6 +329,7 @@ body {
   background-color: inherit;
   border: none;
   transition: 0.25s;
+  line-height: 1.2;
 }
 .dark .todo-card__clear-items {
   color: #4d5066;
