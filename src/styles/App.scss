@@ -26,12 +26,8 @@ body {
   min-height: 100vh;
   width: 100vw;
   padding: 0 2rem;
-  background: url("../assets/images/bg-desktop-dark.jpg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  // THEME
+  @include apply-background-image;
   @include apply-theme("background-color", "color-background");
-  // background-color: $very-dark-blue
 }
 
 @mixin content-wrapper {
@@ -58,7 +54,6 @@ body {
   }
   &__btn-switch-theme {
     background-color: transparent;
-    // outline-color: turquoise;
     cursor: pointer;
     border: none;
   }
@@ -73,10 +68,10 @@ body {
 .add-todo {
   &__wrapper {
     display: flex;
-    gap: 1.25rem;
     padding: 1.25rem;
-    @include apply-theme("background-color", "color-card-background");
+    gap: 1.25rem;
     border-radius: 8px;
+    @include apply-theme("background-color", "color-card-background");
     @include apply-theme("box-shadow", "box-shadow-card");
   }
   &__btn {
@@ -87,11 +82,11 @@ body {
   }
   &__input {
     width: 100%;
-    @include apply-theme("color", "color-input-text");
     background-color: inherit;
     border: none;
     outline: none;
     font-size: 18px;
+    @include apply-theme("color", "color-input-text");
 
     &::placeholder {
       color: $dark-grayish-blue;
@@ -106,14 +101,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 1.5rem;
+  border-radius: 8px;
   @include apply-theme("background-color", "color-card-background");
   @include apply-theme("box-shadow", "box-shadow-card");
-  border-radius: 8px;
-
+  
   &__empty-list {
     margin-top: 1.5rem;
-    @include apply-theme("color", "color-empty-list-text");
     text-align: center;
+    @include apply-theme("color", "color-empty-list-text");
+    
   }
   &__list {
     list-style: none;
@@ -122,10 +118,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
-    @include apply-theme("border-bottom", "color-item-border-bottom");
     padding: 1.25rem;
+    gap: 1.25rem;
     cursor: pointer;
+    @include apply-theme("border-bottom", "color-item-border-bottom");
+    
 
     &:hover .todo-card__item-delete {
       opacity: 1;
@@ -142,8 +139,8 @@ body {
   }
   &__item-check--checked {
     
-    @include btn-checked;
     position: relative;
+    @include btn-checked;
 
     &::before {
       content: "";
@@ -162,8 +159,9 @@ body {
   //   opacity: 0
   }
   &__item-text {
-    @include apply-theme("color", "color-item-text");
     transition: .25s;
+    @include apply-theme("color", "color-item-text");
+    
   }
   &__item-text--completed {
     text-decoration-line: line-through;
@@ -203,14 +201,14 @@ body {
   &__clear-items {
     font-size: 16px;
     font-weight: 400;
-    @include apply-theme("color", "color-filters");
     background-color: inherit;
     border: none;
     transition: .25s;
+    @include apply-theme("color", "color-filters");
 
     &:hover {
-      @include apply-theme("color", "color-filters-hover");
       cursor: pointer;
+      @include apply-theme("color", "color-filters-hover");
     }
   }
 }
@@ -220,14 +218,14 @@ body {
   &__btn {
     font-size: 16px;
     font-weight: 700;
-    @include apply-theme("color", "color-filters");
     background-color: inherit;
     border: none;
     transition: .25s;
+    @include apply-theme("color", "color-filters");
 
     &:hover {
-      @include apply-theme("color", "color-filters-hover");
       cursor: pointer;
+      @include apply-theme("color", "color-filters-hover");
     }
   }
   .selected {
@@ -243,10 +241,11 @@ body {
 }
 
 .filter-mobile {
-  padding: 1.25rem;
-  @include apply-theme("background-color", "color-card-background");
-  border-radius: 8px;
   margin-top: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 8px;
+  @include apply-theme("background-color", "color-card-background");
+  
 
   @include mobile {
     display: none;

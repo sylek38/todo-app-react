@@ -1,6 +1,8 @@
 @import "themes";
+$theme-list: dark light;
 
 // --------------- MEDIA QUERIES
+
 @mixin mobile {
   @media (min-width: 700px) {
     @content;
@@ -14,6 +16,7 @@
 }
 
 // --------------- STYLES
+
 // TODO: apply theme colors for buttons 
 @mixin btn-on-hover {
   width: 1.5rem;
@@ -22,9 +25,8 @@
   transition: .25s;
   @include apply-theme("border", "circle-color-border");
   @include apply-theme("background-color", "circle-color-background");
-  
-  
 }
+
 @mixin on-hover-effect {
   border: 1px solid transparent;
   background-image: $check-background;
@@ -32,6 +34,7 @@
   // box-shadow: 1px 500px 1px gray inset;
   @include apply-theme("box-shadow", "circle-color-box-shadow");
 }
+
 @mixin btn-checked {
   background-image: $check-background;
   box-shadow: none;
@@ -40,6 +43,7 @@
 }
 
 // --------------- THEME
+
 @mixin apply-theme($key, $color) {
   @each $theme-name, $theme-color in $themes {
     .#{$theme-name} & {
@@ -47,3 +51,19 @@
     }
   }
 };
+
+@mixin apply-background-image {
+  @each $theme-name in $theme-list {
+    .#{$theme-name} & {
+      background: url("../assets/images/bg-desktop-"+$theme-name+".jpg");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      
+      @include desktop {
+        background: url("../assets/images/bg-mobile-"+$theme-name+".jpg");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

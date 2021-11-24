@@ -23,9 +23,30 @@ body {
   min-height: 100vh;
   width: 100vw;
   padding: 0 2rem;
+}
+.dark .container {
   background: url("../assets/images/bg-desktop-dark.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+}
+@media (max-width: 699px) {
+  .dark .container {
+    background: url("../assets/images/bg-mobile-dark.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+}
+.light .container {
+  background: url("../assets/images/bg-desktop-light.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+@media (max-width: 699px) {
+  .light .container {
+    background: url("../assets/images/bg-mobile-light.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
 }
 .dark .container {
   background-color: #161722;
@@ -67,8 +88,8 @@ body {
 /* ADD-TODO */
 .add-todo__wrapper {
   display: flex;
-  gap: 1.25rem;
   padding: 1.25rem;
+  gap: 1.25rem;
   border-radius: 8px;
 }
 .dark .add-todo__wrapper {
@@ -172,8 +193,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.25rem;
   padding: 1.25rem;
+  gap: 1.25rem;
   cursor: pointer;
 }
 .dark .todo-card__item {
@@ -220,10 +241,10 @@ body {
   background-color: #FFF;
 }
 .todo-card__item-check--checked {
+  position: relative;
   background-image: linear-gradient(to bottom, #57ddff, #c058f3);
   box-shadow: none;
   border: 1px solid transparent;
-  position: relative;
 }
 .todo-card__item-check--checked::before {
   content: "";
@@ -343,9 +364,9 @@ body {
 }
 
 .filter-mobile {
+  margin-top: 1.25rem;
   padding: 1.25rem;
   border-radius: 8px;
-  margin-top: 1.25rem;
 }
 .dark .filter-mobile {
   background-color: #25273c;
