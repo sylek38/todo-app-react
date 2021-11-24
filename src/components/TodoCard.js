@@ -1,4 +1,4 @@
-import './../styles/App.sass';
+import './../styles/App.scss';
 
 import Filters from './Filters';
 import Todo from './Todo';

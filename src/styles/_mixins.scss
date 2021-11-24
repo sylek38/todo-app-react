@@ -1,0 +1,49 @@
+@import "themes";
+
+// --------------- MEDIA QUERIES
+@mixin mobile {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 699px) {
+    @content;
+  }
+
+}
+
+// --------------- STYLES
+// TODO: apply theme colors for buttons 
+@mixin btn-on-hover {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  transition: .25s;
+  @include apply-theme("border", "circle-color-border");
+  @include apply-theme("background-color", "circle-color-background");
+  
+  
+}
+@mixin on-hover-effect {
+  border: 1px solid transparent;
+  background-image: $check-background;
+  background-origin: border-box;
+  // box-shadow: 1px 500px 1px gray inset;
+  @include apply-theme("box-shadow", "circle-color-box-shadow");
+}
+@mixin btn-checked {
+  background-image: $check-background;
+  box-shadow: none;
+  border: 1px solid transparent;
+  
+}
+
+// --------------- THEME
+@mixin apply-theme($key, $color) {
+  @each $theme-name, $theme-color in $themes {
+    .#{$theme-name} & {
+      #{$key}: map-get(map-get($themes, $theme-name), $color);
+    }
+  }
+};

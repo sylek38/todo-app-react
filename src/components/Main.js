@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './../styles/App.sass';
+import './../styles/App.scss';
 import Filters from './Filters';
 import Form from './Form';
 import TodoCard from "./TodoCard";

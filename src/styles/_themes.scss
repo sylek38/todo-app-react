@@ -1,0 +1,39 @@
+@import "vars";
+@import "typography";
+    
+$themes: (
+
+    "dark": (
+        "color-background": $very-dark-blue,
+        "color-card-background": $very-dark-desaturated-blue,
+        "color-input-text": $light-grayish-blue,
+        "color-item-text": $light-grayish-blue,
+        "color-item-completed-text": $very-dark-grayish-blue,
+        "color-empty-list-text": $very-dark-grayish-blue,
+        "color-item-border-bottom": 1px solid $very-dark-grayish-blue-border,
+        "color-filters": $very-dark-grayish-blue,
+        "color-filters-hover": $light-grayish-blue-hover,
+        "color-filters-active": $bright-blue,
+        "circle-color-background": $very-dark-desaturated-blue,
+        "circle-color-border": 1px solid $very-dark-grayish-blue-border,
+        "circle-color-box-shadow": 1px 500px 1px $very-dark-desaturated-blue inset,
+        "box-shadow-card": 0 35px 50px rgba(0, 0, 0, .2),
+        
+    ),
+    "light": (
+        "color-background": $very-light-gray,
+        "color-card-background": #FFF,
+        "color-input-text": $very-dark-desaturated-blue,
+        "color-item-text": $very-dark-desaturated-blue,
+        "color-item-completed-text": $light-grayish-blue,
+        "color-empty-list-text": $dark-grayish-blue,
+        "color-item-border-bottom": 1px solid $very-ligh-grayish-blue,
+        "color-filters": $dark-grayish-blue,
+        "color-filters-hover": $very-dark-desaturated-blue,
+        "color-filters-active": $bright-blue,
+        "circle-color-background": #FFF,
+        "circle-color-border": 1px solid $light-grayish-blue,
+        "circle-color-box-shadow": 1px 500px 1px #FFF inset,
+        "box-shadow-card": 0 35px 50px rgba(0, 0, 0, .1),
+    )
+)

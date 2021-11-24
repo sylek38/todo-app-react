@@ -1,4 +1,4 @@
-import './../styles/App.sass';
+import './../styles/App.scss';
 import iconCross from "../assets/icons/icon-cross.svg";
 // import iconCheck from "../assets/icons/icon-check.svg";
 

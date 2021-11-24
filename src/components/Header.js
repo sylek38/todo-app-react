@@ -1,4 +1,4 @@
-import './../styles/App.sass';
+import './../styles/App.scss';
 import { ReactComponent as MoonIcon} from './../assets/icons/icon-moon.svg';
 import { ReactComponent as SunIcon} from './../assets/icons/icon-sun.svg';
 

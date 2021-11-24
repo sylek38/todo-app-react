@@ -10,7 +10,7 @@ body {
 
     /* $very-light-gray */
     color: hsl(0, 0%, 98%);
-
+    
     /* $very-light-grayish-blue */
     color: hsl(236, 33%, 92%);
 
@@ -33,7 +33,6 @@ body {
 
     /* $light-grayish-blue | color-input-text*/
     color: hsl(234, 39%, 85%);
-
     /* $light-grayish-blue-hover | filters color and clear items */
     color: hsl(236, 33%, 92%);
 
@@ -42,8 +41,8 @@ body {
 
     /* $very-dark-grayish-blue */
     color: hsl(233, 14%, 35%);
-
     /* $very-dark-grayish-blue 2 */
     color: hsl(237, 14%, 26%);
+
 
 }
