@@ -66,6 +66,14 @@ body {
 /* MAIN */
 .main {
   @include content-wrapper;
+
+  .draggable-text {
+    display: block;
+    margin-top: 3.5rem;
+    text-align: center;
+    @include apply-theme("color", "color-filters");
+  }
+
 }
 
 /* ADD-TODO */
@@ -260,6 +268,7 @@ body {
   margin-top: 1.25rem;
   padding: 1.25rem;
   border-radius: 8px;
+  @include apply-theme("box-shadow", "box-shadow-card");
   @include apply-theme("background-color", "color-card-background");
   
 

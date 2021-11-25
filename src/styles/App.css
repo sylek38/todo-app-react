@@ -62,10 +62,10 @@ body {
 
 /* HEADER */
 .header {
+  padding: 3.2rem 0 2.2rem 0;
   max-width: 600px;
   width: 100%;
   margin: auto;
-  padding: 3.2rem 0 2.2rem 0;
 }
 .header__container {
   display: flex;
@@ -88,6 +88,17 @@ body {
   max-width: 600px;
   width: 100%;
   margin: auto;
+}
+.main .draggable-text {
+  display: block;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+.dark .main .draggable-text {
+  color: #4d5066;
+}
+.light .main .draggable-text {
+  color: #777a92;
 }
 
 /* ADD-TODO */
@@ -112,6 +123,7 @@ body {
 .add-todo__btn {
   min-width: 1.5rem;
   min-height: 1.5rem;
+  cursor: pointer;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -202,7 +214,6 @@ body {
   align-items: center;
   padding: 1.25rem;
   gap: 1.25rem;
-  cursor: pointer;
 }
 .dark .todo-card__item {
   border-bottom: 1px solid #393a4c;
@@ -232,6 +243,7 @@ body {
 .todo-card__item-check {
   min-width: 1.5rem;
   min-height: 1.5rem;
+  cursor: pointer;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -381,6 +393,12 @@ body {
   margin-top: 1.25rem;
   padding: 1.25rem;
   border-radius: 8px;
+}
+.dark .filter-mobile {
+  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.2);
+}
+.light .filter-mobile {
+  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.1);
 }
 .dark .filter-mobile {
   background-color: #25273c;

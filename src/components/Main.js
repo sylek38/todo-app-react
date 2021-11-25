@@ -51,7 +51,6 @@ const Main = () => {
 
     return ( 
         <main className="main">
-            {/* <div className="main__container"> */}
                 <Form 
                     inputText={inputText} 
                     setInputText={setInputText} 
@@ -73,7 +72,7 @@ const Main = () => {
                     />
                 </div>
                 
-            {/* </div> */}
+                <span className="draggable-text">Drag and drop to reorder list</span>
         </main>
      );
 }
