@@ -42,9 +42,9 @@ body {
 
 /* HEADER */
 .header {
-  @include content-wrapper;
-
+  
   padding: 3.2rem 0 2.2rem 0;
+  @include content-wrapper;
 
   &__container {
     display: flex;
@@ -81,6 +81,7 @@ body {
   &__btn {
     min-width: 1.5rem;
     min-height: 1.5rem;
+    cursor: pointer;
     @include btn-on-hover;
     &:hover {
       @include on-hover-effect;
@@ -126,7 +127,7 @@ body {
     align-items: center;
     padding: 1.25rem;
     gap: 1.25rem;
-    cursor: pointer;
+    
     @include apply-theme("border-bottom", "color-item-border-bottom");
     
 
@@ -143,6 +144,7 @@ body {
   &__item-check {
     min-width: 1.5rem;
     min-height: 1.5rem;
+    cursor: pointer;
     @include btn-on-hover;
   }
   &__item-check--checked {
@@ -228,6 +230,7 @@ body {
 
 // TODO-FILTERS
 .todo-filters {
+
   &__btn {
     font-size: 16px;
     font-weight: 700;
