@@ -65,11 +65,14 @@ body {
 
 /* MAIN */
 .main {
+  padding-bottom: 3rem;
   @include content-wrapper;
 
   .draggable-text {
     display: block;
     margin-top: 3.5rem;
+    padding: .5rem;
+    word-wrap: break-word;
     text-align: center;
     @include apply-theme("color", "color-filters");
   }
@@ -170,11 +173,7 @@ body {
       top: 50%;
       transform: translate(-50%, -50%);
     }
-    //   > .todo-card__icon-check
-  //     opacity: 1
 
-  // &__icon-check
-  //   opacity: 0
   }
   &__item-text {
     word-break: break-word;
@@ -257,9 +256,6 @@ body {
   }
 }
 
-    // &:active
-    //   color: $bright-blue
-  
 .todo-filters * + * {
   margin-left: 1rem;
 }
@@ -271,7 +267,6 @@ body {
   @include apply-theme("box-shadow", "box-shadow-card");
   @include apply-theme("background-color", "color-card-background");
   
-
   @include mobile {
     display: none;
   }
