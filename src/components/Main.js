@@ -37,11 +37,18 @@ const Main = ({theme, setTheme}) => {
 
     const saveToLocalStorage = () => {
         localStorage.setItem("todos", JSON.stringify(todos));
-        localStorage.setItem("theme", theme);
+        localStorage.setItem("theme", JSON.stringify(theme));
     }
     
     const getFromLocalStorage = () => {
-        setTheme(localStorage.getItem("theme"));
+        
+        if (localStorage.getItem("theme") === null) {
+            localStorage.setItem("theme", "dark");
+
+        } else {
+            let localtheme = JSON.parse(localStorage.getItem("theme"));
+            setTheme(localtheme);
+        }
         
         if (localStorage.getItem("todos") === null) {
             localStorage.setItem("todos", JSON.stringify([]));
