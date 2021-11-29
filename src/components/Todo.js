@@ -20,7 +20,6 @@ const Todo = ({ text, todo, todos, setTodos, id, index}) => {
     }
 
     return ( 
-        
             <Draggable key={id} draggableId={id} index={index}>
                 {(provided) => (
                 <li className="todo-card__item" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>

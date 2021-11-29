@@ -14,7 +14,7 @@ function App() {
     <div className="container">
       
       <Header theme={theme} setTheme={setTheme}/>
-      <Main />
+      <Main theme={theme} setTheme={setTheme}/>
       
     </div>
   );

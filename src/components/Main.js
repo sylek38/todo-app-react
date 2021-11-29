@@ -4,7 +4,7 @@ import Filters from './Filters';
 import Form from './Form';
 import TodoCard from "./TodoCard";
 
-const Main = () => {
+const Main = ({theme, setTheme}) => {
     const [inputText, setInputText] = useState("");
     const [todos, setTodos] = useState([]);
     const [filterStatus, setFilterStatus] = useState("all");
@@ -17,7 +17,7 @@ const Main = () => {
     useEffect(() => {
         filterHandler();
         saveToLocalStorage();
-    }, [todos, filterStatus]);
+    }, [todos, filterStatus, theme]);
 
     const filterHandler = () => {
         switch(filterStatus) {
@@ -37,9 +37,12 @@ const Main = () => {
 
     const saveToLocalStorage = () => {
         localStorage.setItem("todos", JSON.stringify(todos));
+        localStorage.setItem("theme", theme);
     }
     
     const getFromLocalStorage = () => {
+        setTheme(localStorage.getItem("theme"));
+        
         if (localStorage.getItem("todos") === null) {
             localStorage.setItem("todos", JSON.stringify([]));
 
@@ -47,6 +50,7 @@ const Main = () => {
             let localTodos = JSON.parse(localStorage.getItem("todos"));
             setTodos(localTodos);
         }
+
     }
 
     return ( 
