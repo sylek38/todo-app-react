@@ -1,7 +1,8 @@
 import './styles/App.scss';
 import Header from './components/Header';
 import Main from './components/Main';
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react/cjs/react.development';
 
 function App() {
   const [theme, setTheme] = useState("dark");
