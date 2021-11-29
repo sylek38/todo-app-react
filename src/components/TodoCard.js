@@ -1,12 +1,36 @@
 import './../styles/App.scss';
-
 import Filters from './Filters';
 import Todo from './Todo';
+import React, { useState } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodos }) => {
 
+    const renderedFilteredTodos = filteredTodos.map((todo, index) => {
+        return (
+            <Todo
+                key={todo.id}
+                id={todo.id}
+                index={index}
+                todo={todo}
+                text={todo.name} 
+                todos={todos}
+                setTodos={setTodos}
+            />
+        )
+    })
+
     const clearCompleted = () => {
         setTodos(todos.filter(item => !item.isCompleted));
+    }
+
+    const handleOnDragEnd = result => {
+        if (!result.destination) return;
+        const updatedList = Array.from(todos);
+        const [reorderedItem] = updatedList.splice(result.source.index, 1);
+        updatedList.splice(result.destination.index, 0, reorderedItem);
+
+        setTodos(updatedList);
     }
 
     return (
@@ -20,18 +44,16 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodo
 
             {/* TODO-LIST */}
             { todos && 
-            <ul className="todo-card__list">
-                {filteredTodos.map(todo => (
-                    <Todo 
-                        key={todo.id} 
-                        todo={todo}
-                        text={todo.name} 
-                        todos={todos}
-                        setTodos={setTodos}
-                    />
-                    
-                ))}
-            </ul>
+                <DragDropContext onDragEnd={handleOnDragEnd}>
+                    <Droppable droppableId="draggableList">
+                        {(provided) => (
+                            <ul className="todo-card__list draggableList" {...provided.droppableProps} ref={provided.innerRef}>
+                                { renderedFilteredTodos }
+                                {provided.placeholder}
+                            </ul>
+                    )}
+                    </Droppable>
+                </DragDropContext>
             }
 
             {/* TODO-FILTERS-BOTTOM */}
@@ -53,7 +75,8 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodo
                     onClick={clearCompleted}
                     className="todo-card__clear-items"
                 >
-                    Clear Completed</button>
+                    Clear Completed
+                </button>
             </div>
 
             
