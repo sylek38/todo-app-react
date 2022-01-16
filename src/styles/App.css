@@ -22,14 +22,14 @@ body {
 .container {
   min-height: 100vh;
   width: 100vw;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 .dark .container {
   background: url("../assets/images/bg-desktop-dark.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-@media (max-width: 699px) {
+@media (max-width: 500px) {
   .dark .container {
     background: url("../assets/images/bg-mobile-dark.jpg");
     background-size: 100% auto;
@@ -41,7 +41,7 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-@media (max-width: 699px) {
+@media (max-width: 500px) {
   .light .container {
     background: url("../assets/images/bg-mobile-light.jpg");
     background-size: 100% auto;
@@ -56,7 +56,12 @@ body {
 }
 @media (max-width: 699px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 0 1.25rem;
   }
 }
 
@@ -85,6 +90,7 @@ body {
 
 /* MAIN */
 .main {
+  padding-bottom: 3rem;
   max-width: 600px;
   width: 100%;
   margin: auto;
@@ -320,7 +326,7 @@ body {
   padding: 1.25rem;
   gap: 1rem;
 }
-@media (max-width: 699px) {
+@media (max-width: 500px) {
   .todo-card__bottom .todo-filters {
     display: none;
   }

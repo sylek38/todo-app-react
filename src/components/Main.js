@@ -46,8 +46,8 @@ const Main = ({theme, setTheme}) => {
             localStorage.setItem("theme", "dark");
 
         } else {
-            let localtheme = JSON.parse(localStorage.getItem("theme"));
-            setTheme(localtheme);
+            let localTheme = JSON.parse(localStorage.getItem("theme"));
+            setTheme(localTheme);
         }
         
         if (localStorage.getItem("todos") === null) {
@@ -74,7 +74,8 @@ const Main = ({theme, setTheme}) => {
                     setTodos={setTodos}
                     filterStatus={filterStatus}
                     setFilterStatus={setFilterStatus}
-                    filteredTodos={filteredTodos} 
+                    filteredTodos={filteredTodos}
+                    setFilteredTodos={setFilteredTodos}
                 />
                 <div className="filter-mobile">
                     <Filters

@@ -26,7 +26,6 @@ const Todo = ({ text, todo, todos, setTodos, id, index}) => {
                     <div 
                         className={`todo-card__item-check ${todo.isCompleted ? "todo-card__item-check--checked" : ""}`}
                         onClick={completeHandler}>
-                        {/* <img className="todo-card__icon-check" src={iconCheck} alt="check item" /> */}
                     </div>
                     <span className={`todo-card__item-text ${todo.isCompleted ? "todo-card__item-text--completed" : ""}`}>
                         {text}

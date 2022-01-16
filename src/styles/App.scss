@@ -25,12 +25,16 @@ body {
 .container {
   min-height: 100vh;
   width: 100vw;
-  padding: 0 2rem;
+  padding: 0 3rem;
   @include apply-background-image;
   @include apply-theme("background-color", "color-background");
 
-  @include desktop {
-    padding: 0 1rem;
+  @include tablet {
+    padding: 0 3rem;
+  }
+
+  @include mobile {
+    padding: 0 1.25rem;
   }
 }
 
@@ -207,7 +211,7 @@ body {
     gap: 1rem;
 
     .todo-filters {
-      @include desktop {
+      @include mobile {
         display: none;
       }
     }
@@ -267,7 +271,7 @@ body {
   @include apply-theme("box-shadow", "box-shadow-card");
   @include apply-theme("background-color", "color-card-background");
   
-  @include mobile {
+  @include desktop {
     display: none;
   }
   .todo-filters {

@@ -2,9 +2,9 @@ import './../styles/App.scss';
 import Filters from './Filters';
 import Todo from './Todo';
 import React, { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
-const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodos }) => {
+const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodos, setFilteredTodos }) => {
 
     const renderedFilteredTodos = filteredTodos.map((todo, index) => {
         return (
@@ -26,11 +26,11 @@ const TodoCard = ({ todos, setTodos, filterStatus, setFilterStatus, filteredTodo
 
     const handleOnDragEnd = result => {
         if (!result.destination) return;
-        const updatedList = Array.from(todos);
+        const updatedList = Array.from(filteredTodos);
         const [reorderedItem] = updatedList.splice(result.source.index, 1);
         updatedList.splice(result.destination.index, 0, reorderedItem);
 
-        setTodos(updatedList);
+        setFilteredTodos(updatedList);
     }
 
     return (
