@@ -1,7 +1,7 @@
 import './../styles/App.scss';
 import Filters from './Filters';
 import Todo from './Todo';
-import React, { useState } from 'react';
+import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { useEffect } from 'react';
 
