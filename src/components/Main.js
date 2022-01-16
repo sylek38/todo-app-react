@@ -54,7 +54,6 @@ const Main = ({theme, setTheme}) => {
 
         let localTodos = JSON.parse(localStorage.getItem("todos"));
         setTodos(localTodos);
-
     }
 
     return ( 

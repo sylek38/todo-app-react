@@ -7,8 +7,6 @@ const Filters = ({ filterStatus, setFilterStatus }) => {
 
     };
 
-// ${status === "all" ? "todo-filters__btn--selected" : ""}`}
-
     return ( 
     <div className="todo-filters">
         <button
